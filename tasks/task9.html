@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <a href="../index.html">Home Work №5</a>
+    <h1>Задача 9</h1>
+    <div>
+        <p class="task-p">Користувач загадує число. Комп’ютер задає питання поки не вгадає число користувача
+            (використати
+            confirm)</p>
+    </div>
+    <h2 class="task-h2">Розв'язок:</h2>
+
+    <script>
+
+        const minUserNumber = 1
+        const maxUserNumber = 100
+
+        const enterNum = parseInt(prompt('Введіть номер від 1 до 100', '1'))
+
+        let result = ""
+        let computerNum
+        let guessNum = Infinity
+
+        while (guessNum) {
+            computerNum = Math.floor(Math.random() * (maxUserNumber - minUserNumber + 1)) + minUserNumber
+            const checkNum = confirm(`Ви загадали число ${computerNum}?`)
+
+            if (checkNum) {
+                result = `Це було легко - я вгадав загадане число ${computerNum}!`
+                break
+            }
+        }
+
+        document.write(result)
+
+    </script>
+</body>
+
+</html>
